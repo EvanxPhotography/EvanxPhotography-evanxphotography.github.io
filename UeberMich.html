@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Über den Fotografen Evan Winter aus der Schweiz. Biografie, Vision und Kontakt."
+    />
+    <meta
+      name="keywords"
+      content="Über mich, Biografie, Evan Winter, Schweiz, Fotograf"
+    />
+    <meta name="author" content="Evan Winter" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="UeberMichstyle.css" />
+    <title>Über Mich — evanxphotography</title>
+  </head>
+  <body>
+    <nav>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        ☰ Menü
+      </button>
+      <ul class="nav-list" id="navMenu" aria-label="Hauptnavigation">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="MeineFotografie.html">Meine Fotografie</a></li>
+        <li><a href="Projekte.html">Meine Projekte</a></li>
+        <li>
+          <a href="UeberMich.html" aria-current="page" class="active"
+            >Über Mich</a
+          >
+        </li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <header><h1>Über Mich</h1></header>
+
+      <article class="case reverse">
+        <div class="media">
+          <img src="images/IMG_3910.jpg" alt="Portrait von Evan Winter" />
+          <div class="meta">
+            <span class="badge">Geboren: 2010</span>
+            <span class="badge">Ort: Tägerwilen</span>
+            <span class="badge">Interessen: Fotografie, Musik</span>
+          </div>
+        </div>
+
+        <div class="text">
+          <h3>Wer ich bin</h3>
+          <p>
+            Hey : ) Mein Name ist Evan. Ich bin 16 Jahre alt und fotografiere
+            schon seit mehreren Jahren. <br />
+            Ich fotografiere und filme gerne das, was um mich herum passiert.
+            <br />
+            Oft sind es kleine Momente oder Details, die sonst untergehen.
+            <br />
+            Genau diese versuche ich mit meiner Kamera einzufangen. <br />
+            <br />
+            Wenn ich mal nicht hinter der Kamera stehe, spiele ich Fussball und
+            Klavier. Das eine bringt mich raus, das andere runter. <br />
+            Ausserdem gehe ich zurzeit in die Informatikmittelschule in
+            Frauenfeld. Vieles, was ich dort lerne, fliesst direkt in meine
+            Projekte ein. Auch diese Webseite ist so entstanden
+          </p>
+
+          <br />
+
+          <div class="social-links">
+            <span class="social-label">Folge mir auf Instagram:</span>
+            <a
+              class="social-btn"
+              href="https://www.instagram.com/evanxphotography/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@evanxphotography</a
+            >
+          </div>
+        </div>
+      </article>
+
+      <footer>
+        <div class="footer-centered" role="contentinfo">
+          © 2026 – Evan Winter |
+          <a
+            href="Impressum.html"
+            style="color: var(--muted); text-decoration: underline"
+            >Impressum</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const nav = document.querySelector("nav");
+      const navToggle = document.querySelector(".nav-toggle");
+      const navList = document.getElementById("navMenu");
+      if (nav && navToggle && navList) {
+        navToggle.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("open");
+          navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+        navList.querySelectorAll("a").forEach((link) =>
+          link.addEventListener("click", () => {
+            nav.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+          }),
+        );
+      }
+    </script>
+  </body>
+</html>

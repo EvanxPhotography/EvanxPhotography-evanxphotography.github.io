@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Impressum und rechtliche Hinweise für die Fotografie-Website von Evan Winter."
+    />
+    <meta
+      name="keywords"
+      content="Impressum, Recht, Evan Winter, Schweiz, Fotograf"
+    />
+    <meta name="author" content="Evan Winter" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <title>Impressum — evanxphotography</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        ☰ Menü
+      </button>
+      <ul class="nav-list" id="navMenu" aria-label="Hauptnavigation">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="MeineFotografie.html">Meine Fotografie</a></li>
+        <li><a href="Projekte.html">Meine Projekte</a></li>
+        <li><a href="UeberMich.html">Über Mich</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <header>
+        <h1>Impressum</h1>
+      </header>
+      <main>
+        <section>
+          <h2>Impressum / Anbieterkennzeichnung</h2>
+          <p>
+            <strong>Evan Winter</strong><br />
+            Hauptstrasse 114<br />
+            8274 Tägerwilen<br />
+            Schweiz
+          </p>
+          <p>
+            E-Mail:
+            <a href="mailto:evan_winter@icloud.com">evan_winter@icloud.com</a>
+          </p>
+          <h2>Haftungsausschluss</h2>
+          <p>
+            Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt
+            erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der
+            Inhalte kann jedoch keine Gewähr übernommen werden.
+            Haftungsansprüche gegen den Betreiber dieser Website wegen Schäden
+            materieller oder immaterieller Art, die aus dem Zugriff oder der
+            Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch
+            Missbrauch der Verbindung oder durch technische Störungen entstanden
+            sind, werden ausgeschlossen.
+          </p>
+          <h2>Links</h2>
+          <p>
+            Verweise und Links auf Webseiten Dritter liegen außerhalb meines
+            Verantwortungsbereichs. Es wird jegliche Verantwortung für solche
+            Webseiten abgelehnt. Der Zugriff und die Nutzung solcher Webseiten
+            erfolgen auf eigene Gefahr des Nutzers.
+          </p>
+          <h2>Urheberrecht</h2>
+          <p>
+            Die Inhalte und Werke auf dieser Website sind urheberrechtlich
+            geschützt und dürfen ohne ausdrückliche Zustimmung des
+            Seitenbetreibers nicht verwendet werden. Beiträge Dritter sind als
+            solche gekennzeichnet.
+          </p>
+          <h2>Kontakt</h2>
+          <p>
+            Bei Fragen zum Impressum oder zur Website wenden Sie sich bitte an
+            die oben angegebene E-Mail-Adresse.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <div class="footer-centered" role="contentinfo">
+        © 2026 – Evan Winter |
+        <a
+          href="Impressum.html"
+          style="color: var(--muted); text-decoration: underline"
+          >Impressum</a
+        >
+      </div>
+    </footer>
+
+    <script>
+      const nav = document.querySelector("nav");
+      const navToggle = document.querySelector(".nav-toggle");
+      const navList = document.getElementById("navMenu");
+      if (nav && navToggle && navList) {
+        navToggle.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("open");
+          navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+        navList.querySelectorAll("a").forEach((link) =>
+          link.addEventListener("click", () => {
+            nav.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+          }),
+        );
+      }
+    </script>
+  </body>
+</html>

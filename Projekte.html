@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Fotoprojekte und Reportagen von Evan Winter aus der Schweiz."
+    />
+    <meta
+      name="keywords"
+      content="Fotoprojekt, Reportage, Evan Winter, Schweiz, Fotograf"
+    />
+    <meta name="author" content="Evan Winter" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="UeberMichstyle.css" />
+    <title>Meine Projekte — evanxphotography</title>
+  </head>
+  <body>
+    <nav>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        ☰ Menü
+      </button>
+      <ul class="nav-list" id="navMenu" aria-label="Hauptnavigation">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="MeineFotografie.html">Meine Fotografie</a></li>
+        <li>
+          <a href="Projekte.html" aria-current="page" class="active"
+            >Meine Projekte</a
+          >
+        </li>
+        <li><a href="UeberMich.html">Über Mich</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <header><h1>Meine Projekte</h1></header>
+      <main>
+        <article class="case">
+          <div class="media">
+            <img
+              src="images/DSC01950.jpg"
+              alt="Start-Up Gottesdienst"
+              data-title="Start-Up Gottesdienst"
+              data-desc="Fotos & Video für den Start‑Up Gottesdienst in Tägerwilen."
+              data-extra="Datum: TT.MM.2025 / Rolle: Fotograf & Cutter"
+            />
+          </div>
+
+          <div class="text">
+            <h3>Start‑Up Gottesdienst</h3>
+            <p>
+              Beim Start-Up Gottesdienst in Tägerwilen mache ich Fotos und
+              Videos und fange die Stimmung ein. Aus dem Material erstelle ich
+              Clips, YouTube Videos und Bilder, die für Social Media und zur
+              Dokumentation auf Instagram genutzt werden.
+            </p>
+            <div class="social-links">
+              <span class="social-label">Kirche Tägerwilen auf Instagram:</span>
+              <a
+                class="social-btn"
+                href="https://www.instagram.com/evang_kirche_taegerwilen/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >@evang_kirche_taegerwilen</a
+              >
+            </div>
+            <div class="social-links">
+              <span class="social-label">StartUp Video vom 09.11.2025:</span>
+              <a
+                class="social-btn"
+                href="https://www.youtube.com/watch?v=xjmGKLQbtPw"
+                target="_blank"
+                rel="noopener noreferrer"
+                >@chile_taegerwilen</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="case reverse">
+          <div class="media">
+            <img
+              src="images/DJI_0655.jpg"
+              alt="Fussballcamp Neukirch 2025"
+              data-title="Fussballcamp Neukirch 2025"
+              data-desc="Film & Fotodokumentation vom Fussballcamp in Neukirch 2025."
+              data-extra="Datum: Sommer 2025 / Film: 4min Highlight"
+            />
+          </div>
+
+          <div class="text">
+            <h3>Fussballcamp 2025 — Neukirch</h3>
+            <p>
+              Im Sommer 2025 habe ich beim Fussballcamp Neukirch das Camp mit
+              Fotos und Videos begleitet. Ich habe Trainings, Spiele und viele
+              Momente neben dem Platz fotografiert und gefilmt, um einen
+              ehrlichen Eindruck der Campwoche zu zeigen. Während des Camps war
+              ich ständig unterwegs und habe Situationen spontan festgehalten,
+              damit Stimmung und Alltag sichtbar werden. Aus dem gesamten
+              Material habe ich am Ende einen Campfilm geschnitten, der die
+              Woche zusammenfasst. Klick auf die Galerie für mehr.
+            </p>
+            <div class="social-links">
+              <span class="social-label">Link zu den Fotos:</span>
+              <a
+                class="social-btn"
+                href="https://www.fussball-camp.ch/galerie/2025/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Fussball‑Camp 2025 — Galerie</a
+              >
+            </div>
+          </div>
+        </article>
+      </main>
+
+      <footer>
+        <div class="footer-centered" role="contentinfo">
+          © 2026 – Evan Winter |
+          <a
+            href="Impressum.html"
+            style="color: var(--muted); text-decoration: underline"
+            >Impressum</a
+          >
+        </div>
+      </footer>
+    </div>
+
+    <div id="aboutLightbox" class="about-lightbox" aria-hidden="true">
+      <div class="close" id="aboutClose">✕</div>
+      <div class="box" role="dialog" aria-modal="true">
+        <img id="aboutLBImg" src="3" alt="" />
+        <div class="info">
+          <h4 id="aboutLBTitle"></h4>
+          <p id="aboutLBDesc"></p>
+          <div class="small" id="aboutLBExtra"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const nav = document.querySelector("nav");
+      const navToggle = document.querySelector(".nav-toggle");
+      const navList = document.getElementById("navMenu");
+      if (nav && navToggle && navList) {
+        navToggle.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("open");
+          navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+        navList.querySelectorAll("a").forEach((link) =>
+          link.addEventListener("click", () => {
+            nav.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+          }),
+        );
+      }
+
+      document.querySelectorAll(".case .media img").forEach((img) => {
+        img.style.pointerEvents = "none";
+        img.style.cursor = "default";
+      });
+    </script>
+  </body>
+</html>

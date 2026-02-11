@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danke – evanxphotography</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav aria-label="Hauptnavigation">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        ☰ Menü
+      </button>
+      <ul class="nav-list" id="navMenu">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="MeineFotografie.html">Meine Fotografie</a></li>
+        <li><a href="Projekte.html">Meine Projekte</a></li>
+        <li><a href="UeberMich.html">Über Mich</a></li>
+        <li>
+          <a href="Kontakt.html" aria-current="page" class="active">Kontakt</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="content" style="text-align: center; padding: 80px 20px">
+      <h1>Danke für deine Nachricht!</h1>
+      <p class="muted" style="margin-top: 12px">
+        Ich melde mich so schnell wie möglich bei dir.
+      </p>
+      <div style="margin-top: 24px; display: inline-flex; gap: 12px">
+        <a class="btn-primary" href="index.html">Zur Startseite</a>
+        <a class="btn-ghost" href="MeineFotografie.html">Galerie ansehen</a>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-centered" role="contentinfo">
+        © 2026 – Evan Winter |
+        <a
+          href="Impressum.html"
+          style="color: var(--muted); text-decoration: underline"
+          >Impressum</a
+        >
+      </div>
+    </footer>
+
+    <script>
+      const nav = document.querySelector("nav");
+      const navToggle = document.querySelector(".nav-toggle");
+      const navList = document.getElementById("navMenu");
+      if (nav && navToggle && navList) {
+        navToggle.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("open");
+          navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+        navList.querySelectorAll("a").forEach((link) =>
+          link.addEventListener("click", () => {
+            nav.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+          }),
+        );
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Über den Fotografen Evan Winter aus der Schweiz. Biografie, Vision und Kontakt." />
+  <meta name="keywords" content="Über mich, Biografie, Evan Winter, Schweiz, Fotograf" />
+  <meta name="author" content="Evan Winter" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ÜberMichstyle.css" />
+  <title>Über Mich — Evan Winter</title>
+</head>
+<body>
+
+  <nav>
+
+    <ul class="nav-list" aria-label="Hauptnavigation">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="MeineFotografie.html">Meine Fotografie</a></li>
+      <li><a href="Projekte.html">Meine Projekte</a></li>
+      <li><a href="UeberMich.html">Über Mich</a></li>
+      <li><a href="Kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <header><h1>Über Mich</h1></header>
+
+    <article class="case reverse">
+        <div class="media">
+          <img src="images/IMG_3910.jpg" alt="Evan Winter" data-title="Evan Winter — Portrait" data-desc="Leidenschaftlicher Fotograf aus der Schweiz. Foto: DSC00035.jpg" data-extra="Kamera: Sony A7 / Rolle: Fotograf" />
+          <div class="meta">
+            <span class="badge">Geboren: 2010</span>
+            <span class="badge">Ort: Tägerwilen</span>
+            <span class="badge">Interessen: Fotografie, Musik</span>
+          </div>
+        </div>
+
+        <div class="text">
+          <h3>Wer ich bin</h3>
+          <p>Hey : ) Mein Name ist Evan. Ich bin 16 Jahre alt und fotografie schon seit mehreren Jahren. <br> 
+Ich fotografiere und filme gerne das, was um mich herum passiert. <br> Oft sind es kleine Momente oder Details, die sonst untergehen. <br> Genau diese versuche ich mit meiner Kamera einzufangen. <br>
+<br>
+Wenn ich mal nicht hinter der Kamera stehe, spiele ich Fussball und Klavier. Das eine bringt mich raus, das andere runter. <br>
+Ausserdem gehe ich zurzeit in die Informatikmittelschule in Frauenfeld. Vieles, was ich dort lerne, fliesst direkt in meine Projekte ein. Auch diese Webseite ist so entstanden </p>
+
+
+<br> 
+        
+          <p class="note-edit">Folge mir auf Instagram: <a href="https://www.instagram.com/evanxphotography/" target="_blank" rel="noopener noreferrer">@evanxphotography</a></p>
+        </div>
+      </article>
+
+
+     
+
+   
+    <footer>
+      <div class="footer-centered" role="contentinfo">
+        © 2026 – Evan Winter | <a href="Impressum.html" style="color:var(--muted);text-decoration:underline;">Impressum</a>
+      </div>
+    </footer>
+  </div>
+
+  <div id="aboutLightbox" class="about-lightbox" aria-hidden="true">
+    <div class="close" id="aboutClose">✕</div>
+    <div class="box" role="dialog" aria-modal="true">
+      <img id="aboutLBImg" src="1" alt="">
+      <div class="info">
+        <h4 id="aboutLBTitle"></h4>
+        <p id="aboutLBDesc"></p>
+        <div class="small" id="aboutLBExtra"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const lb = document.getElementById('aboutLightbox');
+      const lbImg = document.getElementById('aboutLBImg');
+      const lbTitle = document.getElementById('aboutLBTitle');
+      const lbDesc = document.getElementById('aboutLBDesc');
+      const lbExtra = document.getElementById('aboutLBExtra');
+      const closeBtn = document.getElementById('aboutClose');
+
+      document.querySelectorAll('.about-wrap .media img').forEach(img => {
+        img.addEventListener('click', () => {
+          lbImg.src = img.src;
+          lbImg.alt = img.alt || '';
+          lbTitle.textContent = img.dataset.title || img.alt || '';
+          lbDesc.textContent = img.dataset.desc || '';
+          lbExtra.textContent = img.dataset.extra || '';
+          lb.classList.add('active');
+          lb.setAttribute('aria-hidden', 'false');
+        });
+      });
+
+      function closeLB(){
+        lb.classList.remove('active');
+        lb.setAttribute('aria-hidden', 'true');
+        lbImg.src = '';
+      }
+      closeBtn.addEventListener('click', closeLB);
+      lb.addEventListener('click', (e) => { if (e.target === lb) closeLB(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLB(); });
+    })();
+  </script>
+
+</body>
+</html>
